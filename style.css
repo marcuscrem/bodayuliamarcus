@@ -164,12 +164,13 @@ img {
 .deco-top-left {
   top: 0;
   left: 0;
+  transform: scaleX(-1);
 }
 
 .deco-top-right {
   top: 0;
   right: 0;
-  transform: scaleX(-1);
+  
 }
 
 /* ===== DECORACIONES: franjas entre secciones ===== */
