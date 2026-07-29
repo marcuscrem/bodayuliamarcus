@@ -367,3 +367,60 @@ body {
     letter-spacing: 0.5rem;
   }
 }
+
+/* ===== DECORACIONES CON IMÁGENES ===== */
+.deco-corner {
+  position: absolute;
+  width: 160px;
+  height: auto;
+  opacity: 0.95;
+  z-index: 3;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
+}
+
+.deco-top-left {
+  top: 0;
+  left: 0;
+}
+
+.deco-top-right {
+  top: 0;
+  right: 0;
+  transform: scaleX(-1); /* voltea la misma imagen para la derecha */
+}
+
+.deco-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  background: transparent;
+}
+
+.deco-branch {
+  width: 220px;
+  max-width: 60%;
+  height: auto;
+  opacity: 0.9;
+}
+
+.footer-deco {
+  width: 140px;
+  height: auto;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .deco-corner {
+    width: 90px;
+  }
+  .deco-branch {
+    width: 140px;
+  }
+  .footer-deco {
+    width: 100px;
+  }
+}
