@@ -228,7 +228,7 @@ img {
 /* ===== LOCATIONS ===== */
 .locations {
   padding: 4rem 1.5rem;
-  background: #fff;
+  background: var(--crema);
   position: relative;
 }
 
@@ -311,7 +311,7 @@ img {
 }
 
 .songs-section {
-  background: #fff;
+  background: var(--crema);
 }
 
 .form-wrapper {
