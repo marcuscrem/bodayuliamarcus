@@ -92,7 +92,7 @@ img {
   font-family: 'Great Vibes', cursive;
   font-size: 4.2rem;
   font-weight: 400;
-  color: #fff;
+  color: var(--azul-oscuro);
   text-shadow: 0 3px 10px rgba(0,0,0,0.4);
   margin-bottom: 1rem;
   line-height: 1.1;
@@ -100,7 +100,7 @@ img {
 
 .names em {
   font-style: normal;
-  color: var(--limon);
+  color: var(--azul-oscuro);
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.5rem;
   padding: 0 0.3rem;
@@ -125,7 +125,7 @@ img {
   font-size: 1.25rem;
   max-width: 500px;
   margin: 0 auto 2rem auto;
-  color: #fff;
+  color: var(--azul-oscuro);
   text-shadow: 0 1px 5px rgba(0,0,0,0.4);
 }
 
