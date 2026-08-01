@@ -63,15 +63,13 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('https://images.unsplash.com/photo-1499602597674-534a91c07d3a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  background: var(--crema);
   text-align: center;
   overflow: hidden;
 }
 
 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(15,61,92,0.55), rgba(15,61,92,0.9) 90%);
+  dispaly: none;
 }
 
 .hero-content {
