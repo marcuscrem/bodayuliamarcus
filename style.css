@@ -393,11 +393,19 @@ img {
     height: 1000px !important;
   }
   .deco-corner {
-    width: 70px;
+    width: 130px;
   }
   .deco-branch {
-    width: 90px;
-    max-width: 55%;
+    width: 160px;
+    max-width: 70%;
+  }
+    .deco-flowers {
+    width: 320px;
+    max-width: 95%;
+  }
+  .deco-citrus {
+    width: 160px;
+    max-width: 60%;
   }
 }
 
