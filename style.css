@@ -291,11 +291,13 @@ img {
 }
 
 .loc-time {
-  margin-top: 0.5rem;
+  margin-top: -0.3rem;
+  margin-bottom: 1.2rem;
   font-weight: 600;
   color: var(--turquesa);
   font-size: 1.05rem;
 }
+
 .btn-map {
   display: inline-block;
   padding: 0.55rem 1.4rem;
