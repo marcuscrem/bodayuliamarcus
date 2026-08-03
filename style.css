@@ -181,10 +181,18 @@ img {
 }
 
 .deco-branch {
-  width: 220px;
-  max-width: 40%;
   height: auto;
   opacity: 0.9;
+}
+
+.deco-flowers {
+  width: 500px;
+  max-width: 90%;
+}
+
+.deco-citrus {
+  width: 220px;
+  max-width: 40%;
 }
 
 /* ===== COUNTDOWN ===== */
