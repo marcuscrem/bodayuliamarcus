@@ -10,15 +10,25 @@
 </head>
 <body>
 
-<!-- Pantalla de Bienvenida (Efecto Ola) -->
+<!-- Pantalla de Bienvenida con Olas Realistas -->
 <div id="intro-overlay" class="intro-overlay">
   <div class="intro-content">
-    <div class="wave-icon">🌊</div>
-    <h1>¡Nos casamos!</h1>
-    <p>Haz clic en la ola para entrar</p>
+    <h1 class="intro-title">¡Nos casamos!</h1>
+    <p class="intro-subtitle">Haz clic para descubrir los detalles</p>
     <button id="open-btn" class="open-btn">Abrir invitación</button>
   </div>
+
+  <!-- Contenedor de Olas Animadas -->
+  <div class="ocean">
+    <svg class="wave wave-back" viewBox="0 24 150 28" preserveAspectRatio="none">
+      <path d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </svg>
+    <svg class="wave wave-front" viewBox="0 24 150 28" preserveAspectRatio="none">
+      <path d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </svg>
+  </div>
 </div>
+
 
 <!-- ===== HERO ===== -->
 <header class="hero">
