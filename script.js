@@ -40,13 +40,10 @@ setInterval(updateCountdown, 1000);
 document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.getElementById("intro-overlay");
   const openBtn = document.getElementById("open-btn");
-  const waveIcon = document.querySelector(".wave-icon");
 
-  function openWebsite() {
-    overlay.classList.add("hidden");
+  if (openBtn) {
+    openBtn.addEventListener("click", () => {
+      overlay.classList.add("hidden");
+    });
   }
-
-  // Permite abrir al hacer clic tanto en el botón como en el icono de la ola
-  if (openBtn) openBtn.addEventListener("click", openWebsite);
-  if (waveIcon) waveIcon.addEventListener("click", openWebsite);
 });
