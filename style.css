@@ -194,6 +194,9 @@ img {
   align-items: center;
   padding: 1rem 0;
   background: transparent;
+  position: relative;
+  z-index: 2;
+  margin-top: -60px; /* NUEVO: hace que suba y monte sobre la sección anterior */
 }
 
 .deco-branch {
