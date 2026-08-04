@@ -479,7 +479,7 @@ img {
 .card-ceremonia::before {
   background-image: 
     linear-gradient(rgba(251, 247, 239, 0.82), rgba(251, 247, 239, 0.82)),
-    url('img/santafaz.jpg');
+    url('img/santafaz.JPG');
 }
 
 .card-celebracion::before {
