@@ -196,7 +196,7 @@ img {
   background: transparent;
   position: relative;
   z-index: 2;
-  margin-top: -60px; /* NUEVO: hace que suba y monte sobre la sección anterior */
+  margin-top: -80px; /* NUEVO: hace que suba y monte sobre la sección anterior */
 }
 
 .deco-branch {
