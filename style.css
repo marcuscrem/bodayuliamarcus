@@ -448,13 +448,17 @@ img {
 
 /* ===== CORAZÓN LATIENDO ===== */
 .countdown-heart {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   margin-top: 20px;
 }
 
 .heartbeat-img {
   width: 60px;
   height: auto;
+  display: block;
   animation: heartbeat 1.2s ease-in-out infinite;
 }
 
