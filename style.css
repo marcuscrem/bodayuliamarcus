@@ -503,11 +503,12 @@ img {
 }
 
 /* ===== OVERLAY SOBRE ===== */
+/* ===== OVERLAY SOBRE ===== */
 #sobre-overlay {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #f5f0e6; /* crema */
+  background: #f5f0e6;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -524,42 +525,53 @@ img {
 
 .sobre-contenedor {
   position: relative;
-  width: 85%;
-  max-width: 340px;
-  perspective: 1200px; /* clave para el 3D */
+  width: 280px;
+  height: 190px;
+  perspective: 1200px;
 }
 
-/* Cuerpo del sobre */
+/* Cuerpo del sobre: rectángulo simple */
 .sobre-cuerpo {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: block;
+  height: 100%;
+  background: #fdfbf6;
+  border: 1px solid #e0d5c0;
+  border-radius: 4px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   z-index: 2;
 }
 
-/* Solapa: rota desde arriba */
+/* Solapa: triángulo CSS puro, mismo ancho que el cuerpo */
 .sobre-solapa {
   position: absolute;
-  top: -6%;
+  top: 0;
   left: 0;
   width: 100%;
-  z-index: 4;
+  height: 100px; /* altura del triángulo */
+  background: #f3ecdc;
+  border: 1px solid #e0d5c0;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
   transform-origin: top center;
   transform-style: preserve-3d;
-  transition: transform 0.9s cubic-bezier(.6,.05,.28,.91), z-index 0s 0.5s;
+  backface-visibility: hidden;
+  z-index: 4;
+  transition: transform 0.9s cubic-bezier(.6,.05,.28,.91);
 }
 
 .sobre-solapa.abierta {
   transform: rotateX(-180deg);
-  z-index: 1; /* pasa detrás del cuerpo al abrirse */
+  z-index: 1;
 }
 
-/* Sello de cera */
+/* Sello */
 .sello {
   position: absolute;
-  top: 70%;
+  top: 70px;
   left: 50%;
-  width: 60px;
+  width: 55px;
   transform: translate(-50%, -50%);
   z-index: 5;
   cursor: pointer;
@@ -573,17 +585,17 @@ img {
   pointer-events: none;
 }
 
-/* Tarjeta que emerge */
+/* Tarjeta */
 .tarjeta-invitacion {
   position: absolute;
-  bottom: 8%;
+  bottom: 10px;
   left: 50%;
-  width: 78%;
+  width: 85%;
   transform: translate(-50%, 20%);
   background: #fffdf8;
   border: 1px solid #e0d5c0;
   border-radius: 4px;
-  padding: 30px 15px;
+  padding: 25px 15px;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   opacity: 0;
@@ -592,12 +604,12 @@ img {
 }
 
 .tarjeta-invitacion.visible {
-  transform: translate(-50%, -60%);
+  transform: translate(-50%, -75%);
   opacity: 1;
 }
 
 .tarjeta-pretitulo {
-  font-family: 'Cormorant Garamond', serif; /* ajusta a tu fuente actual */
+  font-family: 'Cormorant Garamond', serif;
   letter-spacing: 3px;
   text-transform: uppercase;
   font-size: 13px;
@@ -606,9 +618,9 @@ img {
 }
 
 .tarjeta-nombres {
-  font-family: 'Playfair Display', serif; /* ajusta a tu fuente de títulos */
-  font-size: 26px;
-  color: #3c5a53; /* verde/turquesa oscuro, ajusta a tu paleta */
+  font-family: 'Great Vibes', cursive;
+  font-size: 28px;
+  color: #3c5a53;
   margin: 0 0 10px;
 }
 
@@ -633,7 +645,6 @@ img {
   50% { opacity: 0.9; }
 }
 
-/* Bloquear scroll del body mientras el sobre está visible */
 body.sobre-activo {
   overflow: hidden;
   height: 100vh;
