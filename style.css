@@ -501,3 +501,140 @@ img {
     linear-gradient(rgba(251, 247, 239, 0.82), rgba(251, 247, 239, 0.82)),
     url('img/finca-fondo.jpeg');
 }
+
+/* ===== OVERLAY SOBRE ===== */
+#sobre-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #f5f0e6; /* crema */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#sobre-overlay.oculto {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.sobre-contenedor {
+  position: relative;
+  width: 85%;
+  max-width: 340px;
+  perspective: 1200px; /* clave para el 3D */
+}
+
+/* Cuerpo del sobre */
+.sobre-cuerpo {
+  position: relative;
+  width: 100%;
+  display: block;
+  z-index: 2;
+}
+
+/* Solapa: rota desde arriba */
+.sobre-solapa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(.6,.05,.28,.91), z-index 0s 0.5s;
+}
+
+.sobre-solapa.abierta {
+  transform: rotateX(-180deg);
+  z-index: 1; /* pasa detrás del cuerpo al abrirse */
+}
+
+/* Sello de cera */
+.sello {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  width: 60px;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  cursor: pointer;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.25));
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.sello.roto {
+  transform: translate(-50%, -50%) scale(1.4) rotate(25deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Tarjeta que emerge */
+.tarjeta-invitacion {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  width: 78%;
+  transform: translate(-50%, 20%);
+  background: #fffdf8;
+  border: 1px solid #e0d5c0;
+  border-radius: 4px;
+  padding: 30px 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  opacity: 0;
+  z-index: 3;
+  transition: transform 1s cubic-bezier(.2,.8,.2,1) 0.5s, opacity 0.8s ease 0.5s;
+}
+
+.tarjeta-invitacion.visible {
+  transform: translate(-50%, -60%);
+  opacity: 1;
+}
+
+.tarjeta-pretitulo {
+  font-family: 'Cormorant Garamond', serif; /* ajusta a tu fuente actual */
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #8c7a5c;
+  margin: 0 0 8px;
+}
+
+.tarjeta-nombres {
+  font-family: 'Playfair Display', serif; /* ajusta a tu fuente de títulos */
+  font-size: 26px;
+  color: #3c5a53; /* verde/turquesa oscuro, ajusta a tu paleta */
+  margin: 0 0 10px;
+}
+
+.tarjeta-fecha {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #8c7a5c;
+  margin: 0;
+}
+
+.texto-tap {
+  margin-top: 25px;
+  font-size: 13px;
+  color: #8c7a5c;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  animation: pulso 1.8s infinite ease-in-out;
+}
+
+@keyframes pulso {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+/* Bloquear scroll del body mientras el sobre está visible */
+body.sobre-activo {
+  overflow: hidden;
+  height: 100vh;
+}
