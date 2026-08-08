@@ -528,6 +528,7 @@ img {
   width: 280px;
   height: 190px;
   perspective: 1200px;
+  transform-style: preserve-3d; /* AÑADIR ESTA LÍNEA */
 }
 
 /* Cuerpo del sobre: rectángulo simple */
@@ -562,7 +563,7 @@ img {
 }
 
 .sobre-solapa.abierta {
-  transform: rotateX(-180deg);
+  transform: rotateX(-170deg);
   z-index: 1;
 }
 
