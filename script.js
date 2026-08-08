@@ -35,15 +35,49 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 
-// ======= Efecto Ola ======
+// Sobre Efecto //
 
-document.addEventListener("DOMContentLoaded", () => {
-  const overlay = document.getElementById("intro-overlay");
-  const openBtn = document.getElementById("open-btn");
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const overlay = document.getElementById('sobre-overlay');
+  const sello = document.getElementById('sello');
+  const solapa = document.getElementById('solapa');
+  const tarjeta = document.querySelector('.tarjeta-invitacion');
+  const textoTap = document.querySelector('.texto-tap');
 
-  if (openBtn) {
-    openBtn.addEventListener("click", () => {
-      overlay.classList.add("hidden");
-    });
+  // Bloquear scroll mientras se muestra el sobre
+  document.body.classList.add('sobre-activo');
+
+  sello.addEventListener('click', abrirSobre);
+
+  function abrirSobre() {
+    // Evitar doble clic
+    sello.removeEventListener('click', abrirSobre);
+
+    // 1. Sello se rompe
+    sello.classList.add('roto');
+    textoTap.style.opacity = '0';
+
+    // 2. Solapa se abre (después de que el sello empiece a desaparecer)
+    setTimeout(() => {
+      solapa.classList.add('abierta');
+    }, 200);
+
+    // 3. Tarjeta emerge
+    setTimeout(() => {
+      tarjeta.classList.add('visible');
+    }, 700);
+
+    // 4. Todo el overlay se desvanece y se revela la web
+    setTimeout(() => {
+      overlay.classList.add('oculto');
+      document.body.classList.remove('sobre-activo');
+    }, 2200);
+
+    // 5. Eliminar el overlay del DOM tras la transición (opcional, limpieza)
+    setTimeout(() => {
+      overlay.remove();
+    }, 3000);
   }
 });
+</script>
