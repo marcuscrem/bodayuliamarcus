@@ -557,13 +557,12 @@ img {
   clip-path: polygon(0 0, 100% 0, 50% 100%);
   transform-origin: top center;
   transform-style: preserve-3d;
-  backface-visibility: hidden;
   z-index: 4;
   transition: transform 0.9s cubic-bezier(.6,.05,.28,.91);
 }
 
 .sobre-solapa.abierta {
-  transform: rotateX(-170deg);
+  transform: rotateX(-90deg);
   z-index: 1;
 }
 
