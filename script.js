@@ -1,3 +1,61 @@
+// Sobre Efecto //
+
+<script>
+(function () {
+  function iniciarSobre() {
+    const overlay = document.getElementById('sobre-overlay');
+    const sello = document.getElementById('sello');
+    const solapa = document.getElementById('solapa');
+    const tarjeta = document.querySelector('.tarjeta-invitacion');
+    const textoTap = document.querySelector('.texto-tap');
+
+    // Comprobación: si falta algún elemento, avisamos en consola
+    if (!overlay || !sello || !solapa || !tarjeta) {
+      console.error('Falta algún elemento del sobre. Revisa los IDs/clases en el HTML.');
+      return;
+    }
+
+    document.body.classList.add('sobre-activo');
+
+    function abrirSobre() {
+      sello.removeEventListener('click', abrirSobre);
+      sello.classList.add('roto');
+      if (textoTap) textoTap.style.opacity = '0';
+
+      setTimeout(() => {
+        solapa.classList.add('abierta');
+      }, 200);
+
+      setTimeout(() => {
+        tarjeta.classList.add('visible');
+      }, 700);
+
+      setTimeout(() => {
+        overlay.classList.add('oculto');
+        document.body.classList.remove('sobre-activo');
+      }, 2200);
+
+      setTimeout(() => {
+        overlay.remove();
+      }, 3000);
+    }
+
+    sello.addEventListener('click', abrirSobre);
+    // Por si en móvil el click no responde bien, añadimos touchstart también
+    sello.addEventListener('touchstart', function(e){
+      e.preventDefault();
+      abrirSobre();
+    }, { passive: false });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', iniciarSobre);
+  } else {
+    iniciarSobre();
+  }
+})();
+</script>
+
 // ===== COUNTDOWN =====
 const weddingDate = new Date("2027-09-04T12:00:00").getTime();
 
@@ -35,49 +93,4 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 
-// Sobre Efecto //
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const overlay = document.getElementById('sobre-overlay');
-  const sello = document.getElementById('sello');
-  const solapa = document.getElementById('solapa');
-  const tarjeta = document.querySelector('.tarjeta-invitacion');
-  const textoTap = document.querySelector('.texto-tap');
-
-  // Bloquear scroll mientras se muestra el sobre
-  document.body.classList.add('sobre-activo');
-
-  sello.addEventListener('click', abrirSobre);
-
-  function abrirSobre() {
-    // Evitar doble clic
-    sello.removeEventListener('click', abrirSobre);
-
-    // 1. Sello se rompe
-    sello.classList.add('roto');
-    textoTap.style.opacity = '0';
-
-    // 2. Solapa se abre (después de que el sello empiece a desaparecer)
-    setTimeout(() => {
-      solapa.classList.add('abierta');
-    }, 200);
-
-    // 3. Tarjeta emerge
-    setTimeout(() => {
-      tarjeta.classList.add('visible');
-    }, 700);
-
-    // 4. Todo el overlay se desvanece y se revela la web
-    setTimeout(() => {
-      overlay.classList.add('oculto');
-      document.body.classList.remove('sobre-activo');
-    }, 2200);
-
-    // 5. Eliminar el overlay del DOM tras la transición (opcional, limpieza)
-    setTimeout(() => {
-      overlay.remove();
-    }, 3000);
-  }
-});
-</script>
