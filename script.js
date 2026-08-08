@@ -1,6 +1,6 @@
 // Sobre Efecto //
 
-<script>
+
 (function () {
   function iniciarSobre() {
     const overlay = document.getElementById('sobre-overlay');
@@ -54,7 +54,7 @@
     iniciarSobre();
   }
 })();
-</script>
+
 
 // ===== COUNTDOWN =====
 const weddingDate = new Date("2027-09-04T12:00:00").getTime();
