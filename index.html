@@ -13,25 +13,24 @@
 <div id="sobre-overlay">
   <div class="sobre-contenedor">
 
-    <!-- Tarjeta que emerge desde dentro -->
-    <div class="tarjeta-invitacion">
+    <!-- Cuerpo del sobre (rectángulo) -->
+    <div class="sobre-cuerpo"></div>
+
+    <!-- Solapa triangular (CSS puro) -->
+    <div class="sobre-solapa" id="solapa"></div>
+
+    <!-- Sello -->
+    <img src="img/sello.png" class="sello" id="sello" alt="Sello">
+
+    <!-- Tarjeta que emerge -->
+    <div class="tarjeta-invitacion" id="tarjeta">
       <p class="tarjeta-pretitulo">Nos casamos</p>
-      <h2 class="tarjeta-nombres">Yulia y Marcus</h2>
+      <h2 class="tarjeta-nombres">Yulia y Marcus</p>
       <p class="tarjeta-fecha">04 · 09 · 2027</p>
     </div>
 
-    <!-- Cuerpo del sobre (estático) -->
-    <img src="img/sobre-cuerpo.png" alt="" class="sobre-cuerpo">
-
-    <!-- Solapa (se abre en 3D) -->
-    <img src="img/sobre-solapa.png" alt="" class="sobre-solapa" id="solapa">
-
-    <!-- Sello de cera -->
-    <img src="img/sello-cera.png" alt="Toca para abrir" class="sello" id="sello">
-
+    <p class="texto-tap" id="texto-tap">Toca el sello para abrir</p>
   </div>
-
-  <p class="texto-tap">Toca el sello para abrir</p>
 </div>
   
 <div class="page-wrapper">
