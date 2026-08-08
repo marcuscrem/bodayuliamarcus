@@ -540,7 +540,7 @@ img {
 /* Solapa: rota desde arriba */
 .sobre-solapa {
   position: absolute;
-  top: 0;
+  top: -6%;
   left: 0;
   width: 100%;
   z-index: 4;
@@ -557,7 +557,7 @@ img {
 /* Sello de cera */
 .sello {
   position: absolute;
-  top: 42%;
+  top: 70%;
   left: 50%;
   width: 60px;
   transform: translate(-50%, -50%);
