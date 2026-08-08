@@ -1,59 +1,35 @@
 // Sobre Efecto //
+document.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.getElementById('sobre-overlay');
+  const sello = document.getElementById('sello');
+  const solapa = document.getElementById('solapa');
+  const tarjeta = document.getElementById('tarjeta');
+  const textoTap = document.getElementById('texto-tap');
 
+  document.body.classList.add('sobre-activo');
 
-(function () {
-  function iniciarSobre() {
-    const overlay = document.getElementById('sobre-overlay');
-    const sello = document.getElementById('sello');
-    const solapa = document.getElementById('solapa');
-    const tarjeta = document.querySelector('.tarjeta-invitacion');
-    const textoTap = document.querySelector('.texto-tap');
+  sello.addEventListener('click', () => {
+    sello.classList.add('roto');
+    textoTap.style.opacity = '0';
 
-    // Comprobación: si falta algún elemento, avisamos en consola
-    if (!overlay || !sello || !solapa || !tarjeta) {
-      console.error('Falta algún elemento del sobre. Revisa los IDs/clases en el HTML.');
-      return;
-    }
+    setTimeout(() => {
+      solapa.classList.add('abierta');
+    }, 150);
 
-    document.body.classList.add('sobre-activo');
+    setTimeout(() => {
+      tarjeta.classList.add('visible');
+    }, 600);
 
-    function abrirSobre() {
-      sello.removeEventListener('click', abrirSobre);
-      sello.classList.add('roto');
-      if (textoTap) textoTap.style.opacity = '0';
+    setTimeout(() => {
+      overlay.classList.add('oculto');
+      document.body.classList.remove('sobre-activo');
+    }, 2200);
 
-      setTimeout(() => {
-        solapa.classList.add('abierta');
-      }, 200);
-
-      setTimeout(() => {
-        tarjeta.classList.add('visible');
-      }, 700);
-
-      setTimeout(() => {
-        overlay.classList.add('oculto');
-        document.body.classList.remove('sobre-activo');
-      }, 2200);
-
-      setTimeout(() => {
-        overlay.remove();
-      }, 3000);
-    }
-
-    sello.addEventListener('click', abrirSobre);
-    // Por si en móvil el click no responde bien, añadimos touchstart también
-    sello.addEventListener('touchstart', function(e){
-      e.preventDefault();
-      abrirSobre();
-    }, { passive: false });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', iniciarSobre);
-  } else {
-    iniciarSobre();
-  }
-})();
+    setTimeout(() => {
+      overlay.remove();
+    }, 3000);
+  });
+});
 
 
 // ===== COUNTDOWN =====
