@@ -570,7 +570,7 @@ img {
 /* Sello */
 .sello {
   position: absolute;
-  top: 70px;
+  top: 88px;
   left: 50%;
   width: 55px;
   transform: translate(-50%, -50%);
