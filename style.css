@@ -557,6 +557,8 @@ img {
   width: 260px;
   margin: 0 15px;
   transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 
 .polaroid img {
@@ -565,6 +567,9 @@ img {
   object-fit: cover;
   display: block;
   filter: sepia(8%) saturate(105%);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0); /* fuerza capa GPU independiente */
 }
 
 /* Rotaciones tipo collage (solo visibles en escritorio) */
