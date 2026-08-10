@@ -9,29 +9,6 @@
 <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
-<!-- OVERLAY DEL SOBRE -->
-<div id="sobre-overlay">
-  <div class="sobre-contenedor">
-
-    <!-- Cuerpo del sobre (rectángulo) -->
-    <div class="sobre-cuerpo"></div>
-
-    <!-- Solapa triangular (CSS puro) -->
-    <div class="sobre-solapa" id="solapa"></div>
-
-    <!-- Sello -->
-    <img src="img/sello-cera.png" class="sello" id="sello" alt="Sello">
-
-    <!-- Tarjeta que emerge -->
-    <div class="tarjeta-invitacion" id="tarjeta">
-      <p class="tarjeta-pretitulo">Nos casamos</p>
-      <h2 class="tarjeta-nombres">Yulia y Marcus</p>
-      <p class="tarjeta-fecha">04 · 09 · 2027</p>
-    </div>
-
-    <p class="texto-tap" id="texto-tap">Toca el sello para abrir</p>
-  </div>
-</div>
   
 <div class="page-wrapper">
 
@@ -137,6 +114,42 @@
       </iframe>
     </div>
   </section>
+
+  <!-- ===== RETRATOS DE NUESTRO AMOR ===== -->
+<section class="retratos-section">
+  <div class="retratos-header">
+    <p class="subtitulo">Nuestra historia</p>
+    <h2>Retratos de Nuestro Amor</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="carrusel-retratos">
+    <div class="carrusel-track" id="carruselTrack">
+      <div class="polaroid rot-1">
+        <img src="img/pedida-matrimonio.jpg" alt="Yulia y Marcus 1">
+      </div>
+      <div class="polaroid rot-2">
+        <img src="img/isabelyuliamarcus.jpg" alt="Yulia y Marcus 2">
+      </div>
+      <div class="polaroid rot-3">
+        <img src="img/pedida-matrimonio.jpg" alt="Yulia y Marcus 3">
+      </div>
+      <div class="polaroid rot-4">
+        <img src="img/pedida-matrimonio.jpg" alt="Yulia y Marcus 4">
+      </div>
+      <div class="polaroid rot-5">
+        <img src="img/pedida-matrimonio.jpg" alt="Yulia y Marcus 5">
+      </div>
+    </div>
+
+    <!-- Flechas (opcional, funcionan también con swipe en móvil) -->
+    <button class="carrusel-btn prev" id="prevBtn">&#10094;</button>
+    <button class="carrusel-btn next" id="nextBtn">&#10095;</button>
+  </div>
+
+  <!-- Puntitos -->
+  <div class="carrusel-dots" id="carruselDots"></div>
+</section>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
