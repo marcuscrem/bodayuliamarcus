@@ -502,150 +502,148 @@ img {
     url('img/finca-fondo.jpeg');
 }
 
-/* ===== OVERLAY SOBRE ===== */
-/* ===== OVERLAY SOBRE ===== */
-#sobre-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: #f5f0e6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
-}
-
-#sobre-overlay.oculto {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.sobre-contenedor {
-  position: relative;
-  width: 280px;
-  height: 190px;
-  perspective: 1200px;
-  transform-style: preserve-3d; /* AÑADIR ESTA LÍNEA */
-}
-
-/* Cuerpo del sobre: rectángulo simple */
-.sobre-cuerpo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #fdfbf6;
-  border: 1px solid #e0d5c0;
-  border-radius: 4px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  z-index: 2;
-}
-
-/* Solapa: triángulo CSS puro, mismo ancho que el cuerpo */
-.sobre-solapa {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100px; /* altura del triángulo */
-  background: #f3ecdc;
-  border: 1px solid #e0d5c0;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
-  transform-origin: top center;
-  transform-style: preserve-3d;
-  z-index: 4;
-  transition: transform 0.9s cubic-bezier(.6,.05,.28,.91);
-}
-
-.sobre-solapa.abierta {
-  transform: rotateX(-90deg);
-  z-index: 1;
-}
-
-/* Sello */
-.sello {
-  position: absolute;
-  top: 88px;
-  left: 50%;
-  width: 55px;
-  transform: translate(-50%, -50%);
-  z-index: 5;
-  cursor: pointer;
-  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.25));
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.sello.roto {
-  transform: translate(-50%, -50%) scale(1.4) rotate(25deg);
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* Tarjeta */
-.tarjeta-invitacion {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  width: 85%;
-  transform: translate(-50%, 20%);
-  background: #fffdf8;
-  border: 1px solid #e0d5c0;
-  border-radius: 4px;
-  padding: 25px 15px;
+/* ===== RETRATOS DE NUESTRO AMOR - CARRUSEL ===== */
+.retratos-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px 60px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  opacity: 0;
-  z-index: 3;
-  transition: transform 1s cubic-bezier(.2,.8,.2,1) 0.5s, opacity 0.8s ease 0.5s;
+  overflow: hidden;
 }
 
-.tarjeta-invitacion.visible {
-  transform: translate(-50%, -75%);
-  opacity: 1;
-}
-
-.tarjeta-pretitulo {
-  font-family: 'Cormorant Garamond', serif;
+.retratos-header .subtitulo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  font-size: 13px;
-  color: #8c7a5c;
-  margin: 0 0 8px;
+  color: #d98a3d;
+  margin-bottom: 8px;
 }
 
-.tarjeta-nombres {
-  font-family: 'Great Vibes', cursive;
-  font-size: 28px;
-  color: #3c5a53;
-  margin: 0 0 10px;
+.retratos-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  color: #2b4a5e;
+  margin-bottom: 15px;
 }
 
-.tarjeta-fecha {
-  font-size: 14px;
-  letter-spacing: 2px;
-  color: #8c7a5c;
-  margin: 0;
+.retratos-header .divider {
+  width: 60px;
+  height: 2px;
+  background: #d98a3d;
+  margin: 0 auto 50px;
 }
 
-.texto-tap {
-  margin-top: 25px;
-  font-size: 13px;
-  color: #8c7a5c;
-  letter-spacing: 1px;
-  opacity: 0.8;
-  animation: pulso 1.8s infinite ease-in-out;
-}
-
-@keyframes pulso {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.9; }
-}
-
-body.sobre-activo {
+/* Contenedor del carrusel */
+.carrusel-retratos {
+  position: relative;
   overflow: hidden;
-  height: 100vh;
+  padding: 20px 0;
+}
+
+.carrusel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  align-items: center;
+}
+
+/* Cada polaroid dentro del carrusel */
+.polaroid {
+  background: #fdfbf6;
+  padding: 15px 15px 45px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  flex: 0 0 auto;
+  width: 260px;
+  margin: 0 15px;
+  transition: transform 0.3s ease;
+}
+
+.polaroid img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  filter: sepia(8%) saturate(105%);
+}
+
+/* Rotaciones tipo collage (solo visibles en escritorio) */
+.rot-1 { transform: rotate(-4deg); }
+.rot-2 { transform: rotate(3deg); }
+.rot-3 { transform: rotate(-2deg); }
+.rot-4 { transform: rotate(4deg); }
+.rot-5 { transform: rotate(-3deg); }
+
+/* Flechas */
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  color: #2b4a5e;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.carrusel-btn:hover {
+  background: #d98a3d;
+  color: white;
+}
+
+.carrusel-btn.prev { left: 5px; }
+.carrusel-btn.next { right: 5px; }
+
+/* Puntitos */
+.carrusel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e0d6c8;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.dot.active {
+  background: #d98a3d;
+  transform: scale(1.3);
+}
+
+/* ===== RESPONSIVE MÓVIL ===== */
+@media (max-width: 768px) {
+  .retratos-header h2 {
+    font-size: 1.9rem;
+  }
+
+  .polaroid {
+    width: 220px;
+    margin: 0 10px;
+  }
+
+  .polaroid img {
+    height: 240px;
+  }
+
+  .rot-1, .rot-2, .rot-3, .rot-4, .rot-5 {
+    transform: rotate(0deg);
+  }
+
+  .carrusel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
 }
