@@ -273,7 +273,7 @@ img {
 }
 
 .time-box span {
-  color: var(--naranja);
+  color: #b8954f;
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(3.25rem, 7vw, 5.35rem);
   font-weight: 500;
