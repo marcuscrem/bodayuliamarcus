@@ -1,36 +1,3 @@
-// Sobre Efecto //
-document.addEventListener('DOMContentLoaded', () => {
-  const overlay = document.getElementById('sobre-overlay');
-  const sello = document.getElementById('sello');
-  const solapa = document.getElementById('solapa');
-  const tarjeta = document.getElementById('tarjeta');
-  const textoTap = document.getElementById('texto-tap');
-
-  document.body.classList.add('sobre-activo');
-
-  sello.addEventListener('click', () => {
-    sello.classList.add('roto');
-    textoTap.style.opacity = '0';
-
-    setTimeout(() => {
-      solapa.classList.add('abierta');
-    }, 150);
-
-    setTimeout(() => {
-      tarjeta.classList.add('visible');
-    }, 600);
-
-    setTimeout(() => {
-      overlay.classList.add('oculto');
-      document.body.classList.remove('sobre-activo');
-    }, 2200);
-
-    setTimeout(() => {
-      overlay.remove();
-    }, 3000);
-  });
-});
-
 
 // ===== COUNTDOWN =====
 const weddingDate = new Date("2027-09-04T12:00:00").getTime();
@@ -68,5 +35,103 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+// ===== CARRUSEL RETRATOS =====
+document.addEventListener('DOMContentLoaded', function () {
+  const track = document.getElementById('carruselTrack');
+  const dotsContainer = document.getElementById('carruselDots');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
 
+  if (!track) return; // Si no existe la sección, no hace nada
+
+  const slides = Array.from(track.children);
+  let currentIndex = 0;
+  let slidesPerView = getSlidesPerView();
+
+  // Crear puntitos según número de "páginas"
+  function getTotalDots() {
+    return Math.ceil(slides.length / slidesPerView);
+  }
+
+  function getSlidesPerView() {
+    return window.innerWidth <= 768 ? 1 : 3;
+  }
+
+  function createDots() {
+    dotsContainer.innerHTML = '';
+    const totalDots = getTotalDots();
+    for (let i = 0; i < totalDots; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    const dots = dotsContainer.children;
+    const activeDot = Math.floor(currentIndex / slidesPerView);
+    Array.from(dots).forEach((dot, i) => {
+      dot.classList.toggle('active', i === activeDot);
+    });
+  }
+
+  function goToSlide(dotIndex) {
+    currentIndex = dotIndex * slidesPerView;
+    if (currentIndex >= slides.length) currentIndex = slides.length - 1;
+    updateCarousel();
+  }
+
+  function updateCarousel() {
+    const slideWidth = slides[0].getBoundingClientRect().width + 30; // + margin
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    updateDots();
+  }
+
+  function nextSlide() {
+    if (currentIndex < slides.length - slidesPerView) {
+      currentIndex += slidesPerView;
+    } else {
+      currentIndex = 0; // vuelve al inicio
+    }
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    if (currentIndex > 0) {
+      currentIndex -= slidesPerView;
+    } else {
+      currentIndex = slides.length - slidesPerView; // va al final
+    }
+    updateCarousel();
+  }
+
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  // Soporte para swipe en móvil
+  let startX = 0;
+  track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  track.addEventListener('touchend', (e) => {
+    const endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) nextSlide();
+    if (endX - startX > 50) prevSlide();
+  });
+
+  // Recalcular en resize
+  window.addEventListener('resize', () => {
+    slidesPerView = getSlidesPerView();
+    createDots();
+    currentIndex = 0;
+    updateCarousel();
+  });
+
+  // Inicializar
+  createDots();
+  updateCarousel();
+});
 
