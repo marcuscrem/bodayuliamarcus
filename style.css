@@ -30,6 +30,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: var(--texto-oscuro);
   background-color: var(--crema);
+  background-image: url('img/simple-smooth-fabric-textured-background.png')
   overflow-x: hidden;
 }
 
