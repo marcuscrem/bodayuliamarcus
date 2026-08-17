@@ -225,7 +225,7 @@ img {
   isolation: isolate;
   overflow: hidden;
   padding: 1rem 1.5rem 4rem;
-  background: var(--crema);
+    /* background: var(--crema);  <-- quitar esta línea */
   text-align: center;
 }
 
@@ -321,7 +321,7 @@ img {
 /* ===== LOCALIZACIONES ===== */
 .locations-section {
   padding: 4rem 1.5rem;
-  background: var(--crema);
+    /* background: var(--crema);  <-- quitar esta línea */
   text-align: center;
 }
 
@@ -407,11 +407,11 @@ img {
 }
 
 .rsvp-section {
-  background: var(--crema);
+  /* background: var(--crema);  <-- quitar esta línea */
 }
 
 .songs-section {
-  background: var(--crema);
+    /* background: var(--crema);  <-- quitar esta línea */
 }
 
 .form-wrapper {
