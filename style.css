@@ -28,7 +28,7 @@ html {
 
 body {
   background-color: var(--crema);
-  background-image: url('img/textura-lino.png');
+  background-image: url('img/simple-smooth-fabric-textured-background.png');
   background-repeat: repeat;
   background-size: 300px; /* ajusta este valor según se vea */
   background-attachment: fixed;
