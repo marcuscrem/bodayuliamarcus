@@ -20,6 +20,7 @@
   --rosa: #e8b4bc;
   --beige: #d9b080;
   --verde-suave: #c5e1a5;
+  --oliva-oscuro: #4A5A32;
 }
 
 html {
@@ -52,7 +53,7 @@ img {
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.1rem;
-  color: var(--azul-oscuro);
+  color: var(--oliva-oscuro);
   margin-bottom: 0.5rem;
   letter-spacing: 1px;
   text-shadow: 0 2px 6px rgba(0,0,0,0.3);
@@ -62,7 +63,7 @@ img {
   text-align: center;
   max-width: 600px;
   margin: 0 auto 2rem auto;
-  color: #3d5a70;
+  color: var(--oliva-oscuro);
   font-size: 0.95rem;
   padding: 0 1rem;
 }
