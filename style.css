@@ -215,7 +215,7 @@ img {
 
 /* Solo para el separador que va justo debajo del hero */
 .deco-row.hero-overlap {
-  margin-top: -100px;
+  margin-top: -80px;
 }
 
 /* ===== COUNTDOWN ===== */
