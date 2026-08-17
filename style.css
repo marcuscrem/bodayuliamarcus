@@ -346,7 +346,7 @@ img {
   text-transform: uppercase;
   letter-spacing: .12em;
   font-size: .85rem;
-  color: var(--dorado, #b8954f);
+  color: var( --verde-oliva);
   margin-bottom: .3rem;
 }
 
