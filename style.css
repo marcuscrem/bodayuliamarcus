@@ -192,7 +192,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0;
+  padding: 0;
   background: transparent;
   position: relative;
   z-index: 2;
@@ -223,7 +223,7 @@ img {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: 5rem 1.5rem 4rem;
+  padding: 1rem 1.5rem 4rem;
   background: var(--crema);
   text-align: center;
 }
