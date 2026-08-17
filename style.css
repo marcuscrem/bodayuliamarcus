@@ -27,11 +27,11 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  color: var(--texto-oscuro);
   background-color: var(--crema);
-  background-image: url('img/simple-smooth-fabric-textured-background.png')
-  overflow-x: hidden;
+  background-image: url('img/textura-lino.png');
+  background-repeat: repeat;
+  background-size: 300px; /* ajusta este valor según se vea */
+  background-attachment: fixed;
 }
 
 img {
@@ -579,7 +579,7 @@ img {
   font-size: 0.85rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #d98a3d;
+  color: #e0d6c8;;
   margin-bottom: 8px;
 }
 
@@ -593,7 +593,7 @@ img {
 .retratos-header .divider {
   width: 60px;
   height: 2px;
-  background: #d98a3d;
+  background: #e0d6c8;;
   margin: 0 auto 50px;
 }
 
@@ -686,7 +686,7 @@ img {
 }
 
 .dot.active {
-  background: #d98a3d;
+  background: var(--verde-oliva);
   transform: scale(1.3);
 }
 
