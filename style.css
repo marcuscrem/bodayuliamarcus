@@ -622,7 +622,7 @@ img {
 
 /* Cada polaroid dentro del carrusel */
 .polaroid {
-  background: var(--verde-oliva);
+  background: var(--blanco);
   padding: 15px 15px 45px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   border-radius: 2px;
