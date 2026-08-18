@@ -21,6 +21,7 @@
   --beige: #d9b080;
   --verde-suave: #c5e1a5;
   --oliva-oscuro: #4A5A32;
+  --dorado: #C9A961;
 }
 
 html {
@@ -110,7 +111,7 @@ img {
   letter-spacing: 3px;
   font-size: 0.85rem;
   margin-bottom: 1rem;
-  color: var(--oliva-oscuro);
+  color: var(--dorado);
   text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
 
@@ -118,7 +119,7 @@ img {
   font-family: 'Great Vibes', cursive;
   font-size: 4.2rem;
   font-weight: 400;
-  color: var(--oliva-oscuro);
+  color: var(--dorado);
   text-shadow: 0 3px 10px rgba(0,0,0,0.4);
   margin-bottom: 1rem;
   line-height: 1.1;
@@ -126,7 +127,7 @@ img {
 
 .names em {
   font-style: normal;
-  color: var(--oliva-oscuro);
+  color: var(--dorado);
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.5rem;
   padding: 0 0.3rem;
@@ -135,7 +136,7 @@ img {
 .date-pill {
   display: inline-block;
   background: rgba(255,255,255,0.92);
-  color: var(--oliva-oscuro);
+  color: var(--dorado);
   padding: 0.5rem 1.5rem;
   border-radius: 30px;
   font-weight: 700;
@@ -151,7 +152,7 @@ img {
   font-size: 1.25rem;
   max-width: 500px;
   margin: 0 auto 2rem auto;
-  color: var(--oliva-oscuro);
+  color: var(--dorado);
   text-shadow: 0 1px 5px rgba(0,0,0,0.4);
 }
 
