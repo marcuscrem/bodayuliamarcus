@@ -357,7 +357,7 @@ img {
   text-transform: uppercase;
   letter-spacing: .12em;
   font-size: .85rem;
-  color: var( --verde-oliva);
+  color: var( --oliva-oscuro);
   margin-bottom: .3rem;
 }
 
@@ -386,7 +386,7 @@ img {
 
 .map-button {
   display: inline-block;
-  background: var(--azul-oscuro);
+  background: var(--dorado);
   color: #fff;
   text-decoration: none;
   padding: .7rem 1.8rem;
@@ -398,7 +398,7 @@ img {
 }
 
 .map-button:hover {
-  background: var(--dorado, #b8954f);
+  background: var(--oliva-oscuro);
 }
 
 @media (max-width: 600px) {
@@ -442,7 +442,7 @@ img {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: var(--oliva-oscuro);
+  background: var(--dorado);
   color: #fff;
   text-align: center;
   padding: 3rem 1.5rem;
@@ -589,21 +589,21 @@ img {
   font-size: 0.85rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #e0d6c8;;
+  color: var(--oliva-oscuro);
   margin-bottom: 8px;
 }
 
 .retratos-header h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.4rem;
-  color: #2b4a5e;
+  color: var(--oliva-oscuro);
   margin-bottom: 15px;
 }
 
 .retratos-header .divider {
   width: 60px;
   height: 2px;
-  background: #e0d6c8;;
+  background: var(--dorado);
   margin: 0 auto 50px;
 }
 
@@ -622,7 +622,7 @@ img {
 
 /* Cada polaroid dentro del carrusel */
 .polaroid {
-  background: #fdfbf6;
+  background: var(--verde-oliva);
   padding: 15px 15px 45px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   border-radius: 2px;
