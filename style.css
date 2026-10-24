@@ -127,7 +127,7 @@ img {
 
 .names em {
   font-style: normal;
-  color: var(--oliva-oscuro));
+  color: var(--oliva-oscuro);
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.5rem;
   padding: 0 0.3rem;
@@ -724,4 +724,33 @@ img {
     height: 36px;
     font-size: 0.95rem;
   }
+}
+
+/* ===== SELECTOR DE IDIOMA ===== */
+.lang-switcher {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+  display: flex;
+  gap: 6px;
+}
+
+.lang-switcher button {
+  background: rgba(251, 247, 239, 0.9);
+  border: 1px solid var(--oliva-oscuro);
+  color: var(--oliva-oscuro);
+  padding: 5px 11px;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-switcher button:hover,
+.lang-switcher button.active {
+  background: var(--oliva-oscuro);
+  color: #fff;
 }
