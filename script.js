@@ -1,4 +1,96 @@
+// ===== TRADUCCIONES =====
+const translations = {
+  es: {
+    "pretitle": "Nos casamos",
+    "quote": "\"Del Miño al Mediterráneo, dos caminos que se convierten en uno solo\"",
+    "countdown": "FALTAN",
+    "days": "días",
+    "hours": "hs",
+    "minutes": "min",
+    "seconds": "seg",
+    "locations.title": "Dónde celebraremos nuestro día",
+    "ceremony": "Ceremonia",
+    "celebration": "Celebración",
+    "map": "Ver en el mapa",
+    "rsvp.title": "Confirma tu asistencia",
+    "rsvp.subtitle": "Nos haría muy felices contar contigo. Por favor, confirma antes del <strong>01.06.2027</strong>",
+    "songs.title": "¿Qué no puede faltar en la fiesta?",
+    "songs.subtitle": "Déjanos aquí tu canción favorita para que suene en nuestra boda",
+    "story": "Nuestra historia",
+    "portraits": "Retratos de Nuestro Amor",
+    "footer.note": "Tui · Alicante"
+  },
+  en: {
+    "pretitle": "We're getting married",
+    "quote": "\"From the Miño to the Mediterranean, two paths becoming one\"",
+    "countdown": "COUNTDOWN",
+    "days": "days",
+    "hours": "hrs",
+    "minutes": "min",
+    "seconds": "sec",
+    "locations.title": "Where we'll celebrate our day",
+    "ceremony": "Ceremony",
+    "celebration": "Celebration",
+    "map": "View on map",
+    "rsvp.title": "Confirm your attendance",
+    "rsvp.subtitle": "It would make us very happy to have you with us. Please confirm before <strong>01.06.2027</strong>",
+    "songs.title": "What can't be missing at the party?",
+    "songs.subtitle": "Leave us your favourite song so it plays at our wedding",
+    "story": "Our story",
+    "portraits": "Portraits of Our Love",
+    "footer.note": "Tui · Alicante"
+  },
+  de: {
+    "pretitle": "Wir heiraten",
+    "quote": "\"Vom Miño bis zum Mittelmeer – zwei Wege, die zu einem werden\"",
+    "countdown": "NOCH",
+    "days": "Tage",
+    "hours": "Std",
+    "minutes": "Min",
+    "seconds": "Sek",
+    "locations.title": "Wo wir unseren Tag feiern",
+    "ceremony": "Trauung",
+    "celebration": "Feier",
+    "map": "Auf der Karte ansehen",
+    "rsvp.title": "Bestätige deine Teilnahme",
+    "rsvp.subtitle": "Wir würden uns sehr freuen, dich dabei zu haben. Bitte bestätige bis zum <strong>01.06.2027</strong>",
+    "songs.title": "Was darf auf der Party nicht fehlen?",
+    "songs.subtitle": "Hinterlasse uns hier dein Lieblingslied, damit es auf unserer Hochzeit läuft",
+    "story": "Unsere Geschichte",
+    "portraits": "Porträts unserer Liebe",
+    "footer.note": "Tui · Alicante"
+  }
+};
 
+function setLanguage(lang) {
+  const dict = translations[lang];
+  if (!dict) return;
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key]) el.textContent = dict[key];
+  });
+
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (dict[key]) el.innerHTML = dict[key];
+  });
+
+  document.querySelectorAll('.lang-switcher button').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  localStorage.setItem('lang', lang);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.lang-switcher button').forEach(btn => {
+    btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+  });
+  setLanguage(localStorage.getItem('lang') || 'es');
+});
 // ===== COUNTDOWN =====
 const weddingDate = new Date("2027-09-04T12:00:00").getTime();
 
