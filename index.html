@@ -11,6 +11,12 @@
 </head>
 <body>
   
+<div class="lang-switcher">
+  <button data-lang="es" class="active">ES</button>
+  <button data-lang="en">EN</button>
+  <button data-lang="de">DE</button>
+</div>
+  
 <div class="page-wrapper">
 
   <!-- ===== HERO ===== -->
@@ -19,10 +25,10 @@
     <!-- <img src="img/flowers-corner.png" alt="" class="deco-corner deco-top-left">
     <img src="img/flowers-corner.png" alt="" class="deco-corner deco-top-right"> -->
     <div class="hero-content">
-      <p class="pre-title">Nos casamos</p>
+      <p class="pre-title" data-i18n"pretitle"=>Nos casamos</p>
       <h1 class="names"><span>Yulia</span> <em>&</em> <span>Marcus</span></h1>
       <p class="date-pill">04 · 09 · 2027</p>
-      <p class="quote">"Del Miño al Mediterráneo, dos caminos que se convierten en uno solo"</p>
+      <p class="quote" data-i18n="quote">"Del Miño al Mediterráneo, dos caminos que se convierten en uno solo"</p>
     </div>
   </header>
 
@@ -33,13 +39,13 @@
   <!-- ===== COUNTDOWN ===== -->
   <section class="countdown-section">
     <div class="countdown-content">
-      <h2 class="section-title">FALTAN</h2>
+      <h2 class="section-title" data-i18n="countdown">FALTAN</h2>
       <div id="countdown" class="countdown">
-        <div class="time-box"><span id="days">00</span><small>días</small></div>
-        <div class="time-box"><span id="hours">00</span><small>hs</small></div>
-        <div class="time-box"><span id="minutes">00</span><small>min</small></div>
-        <div class="time-box"><span id="seconds">00</span><small>seg</small></div>
-      </div>
+    <div class="time-box"><span id="days">00</span><small data-i18n="days">días</small></div>
+    <div class="time-box"><span id="hours">00</span><small data-i18n="hours">horas</small></div>
+    <div class="time-box"><span id="minutes">00</span><small data-i18n="minutes">min</small></div>
+    <div class="time-box"><span id="seconds">00</span><small data-i18n="seconds">seg</small></div>
+  </div>
     </div>
   </section>
   
@@ -50,10 +56,10 @@
   
   <!-- ===== LOCALIZACIONES ===== -->
 <section class="locations-section">
-  <h2 class="section-title">Dónde celebraremos nuestro día</h2>
+  <h2 class="section-title" data-i18n="locations.title">Dónde celebraremos nuestro día</h2>
 
   <div class="location-card">
-    <p class="location-label">Ceremonia</p>
+    <p class="location-label" data-i18n="ceremony">Ceremonia</p>
     <img src="img/ilustracion-iglesia3.png" alt="Ilustración Iglesia de Santa Faz" class="location-illustration">
     <h3 class="location-name">Iglesia de Santa Faz</h3>
     <p class="location-address">
@@ -61,18 +67,18 @@
       Santa Faz, Alicante
     </p>
     <p class="location-time">13:00h</p>
-    <a href="https://maps.google.com/?q=Iglesia+de+Santa+Faz,+Plaza+Luis+Foglietti,+Alicante" target="_blank" class="map-button">Ver en el mapa</a>
+    <a href="https://maps.google.com/?q=Iglesia+de+Santa+Faz,+Plaza+Luis+Foglietti,+Alicante" target="_blank" class="map-button" data-i18n="map">Ver en el mapa</a>
   </div>
 
   <div class="location-card">
-    <p class="location-label">Celebración</p>
+    <p class="location-label" data-i18n="celebration">Celebración</p>
     <img src="img/ilustracion-finca3.png" alt="Ilustración Finca Torreta de Bayona" class="location-illustration">
     <h3 class="location-name">Finca Torreta de Bayona</h3>
     <p class="location-address">
       Pujada Borratxina, 45<br>
       Mutxamel, Alicante
     </p>
-    <a href="https://maps.google.com/?q=Finca+Torreta+de+Bayona,+Mutxamel,+Alicante" target="_blank" class="map-button">Ver en el mapa</a>
+    <a href="https://maps.google.com/?q=Finca+Torreta+de+Bayona,+Mutxamel,+Alicante" target="_blank" class="map-button" data-i18n="map">Ver en el mapa</a>
   </div>
 </section>
 
@@ -82,8 +88,8 @@
 
   <!-- ===== RSVP (Google Form embebido) ===== -->
   <section id="rsvp" class="rsvp-section">
-    <h2 class="section-title">Confirma tu asistencia</h2>
-    <p class="section-subtitle">Nos haría muy felices contar contigo. Por favor, confirma antes del <strong>01.06.2027</strong></p>
+    <h2 class="section-title" data-i18n="rsvp.title">Confirma tu asistencia</h2>
+    <p class="section-subtitle" data-i18n-html="rsvp.subtitle">Nos haría muy felices contar contigo. Por favor, confirma antes del <strong>01.06.2027</strong></p>
 
     <div class="form-wrapper">
       <iframe
@@ -104,8 +110,8 @@
 
   <!-- ===== CANCIONES ===== -->
   <section id="songs" class="songs-section">
-    <h2 class="section-title">¿Qué no puede faltar en la fiesta?</h2>
-    <p class="section-subtitle">Déjanos aquí tu canción favorita para que suene en nuestra boda</p>
+    <h2 class="section-title" data-i18n="songs.title">¿Qué no puede faltar en la fiesta?</h2>
+    <p class="section-subtitle" data-i18n="songs.subtitle">Déjanos aquí tu canción favorita para que suene en nuestra boda</p>
 
     <div class="form-wrapper">
       <iframe
@@ -123,8 +129,8 @@
   <!-- ===== RETRATOS DE NUESTRO AMOR ===== -->
 <section class="retratos-section">
   <div class="retratos-header">
-    <p class="subtitulo">Nuestra historia</p>
-    <h2>Retratos de Nuestro Amor</h2>
+    <p class="subtitulo" data-i18n="story">Nuestra historia</p>
+    <h2> data-i18n="portraits">Retratos de Nuestro Amor</h2>
     <div class="divider"></div>
   </div>
 
